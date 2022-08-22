@@ -63,7 +63,7 @@
         android:layout_height="51dp"
         android:layout_marginTop="36dp"
         android:text="View all Students"
-        app:layout_constraintStart_toStartOf="@+id/button5"
+        app:layout_constraintStart_toStartOf="@+id/buttondelete"
         app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
 
     <Button
@@ -72,11 +72,11 @@
         android:layout_height="51dp"
         android:layout_marginTop="36dp"
         android:text="Add Value"
-        app:layout_constraintEnd_toEndOf="@+id/button6"
+        app:layout_constraintEnd_toEndOf="@+id/buttonupdate"
         app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/buttondelete"
         android:layout_width="157dp"
         android:layout_height="57dp"
         android:layout_marginTop="16dp"
@@ -85,7 +85,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonViewAll" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/buttonupdate"
         android:layout_width="136dp"
         android:layout_height="54dp"
         android:layout_marginTop="16dp"

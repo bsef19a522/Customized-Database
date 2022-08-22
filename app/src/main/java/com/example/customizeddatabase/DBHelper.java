@@ -49,10 +49,27 @@ import java.util.ArrayList;
             cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
             db.insert(STUDENT_TABLE, null, cv);
             db.close();
-            //NullCoumnHack
-            //long insert =
         }
 
+        public void  updateStudent(StudentModel STUDENTModel){
+            SQLiteDatabase db = this.getWritableDatabase();
+            //Hash map, as we did in bundles
+            ContentValues cv = new ContentValues();
+
+            cv.put(STUDENT_NAME, STUDENTModel.getName());
+            cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
+            cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
+            db.update(STUDENT_TABLE, cv, STUDENT_ID + "?", new String[] {String.valueOf(STUDENTModel.getName())});
+            db.close();
+        }
+
+        public void  deleteStudent(StudentModel SModel){
+            SQLiteDatabase db = this.getWritableDatabase();
+            //Hash map, as we did in bundles
+            db.delete(STUDENT_TABLE, STUDENT_ID + "?", new String[] {String.valueOf(SModel.getName())});
+            db.close();
+        }
+        
         public ArrayList<StudentModel> getAllStudents() {
 
             SQLiteDatabase db = this.getReadableDatabase();
@@ -71,7 +88,7 @@ import java.util.ArrayList;
                 } while (cursorCourses.moveToNext());
 
             }
-
+            
             cursorCourses.close();
             return studentArrayList;
         }
