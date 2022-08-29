@@ -58,16 +58,13 @@ import java.util.ArrayList;
 
             cv.put(STUDENT_NAME, name);
             cv.put(STUDENT_ROLL, roll);
-            db.update(STUDENT_TABLE, cv, STUDENT_ROLL + "=?", null);
-            db.close();
-            return false;
+            return db.update(STUDENT_TABLE, cv, STUDENT_ROLL + "=?", null)>0;
         }
 
-        public void  deleteStudent(StudentModel SModel){
+        public boolean deleteStudent(int roll){
             SQLiteDatabase db = this.getWritableDatabase();
             //Hash map, as we did in bundles
-            db.delete(STUDENT_TABLE, STUDENT_ID + "=?", new String[] {String.valueOf(SModel.getName())});
-            db.close();
+            return db.delete( STUDENT_TABLE,STUDENT_ID + "=?", null)>0;
         }
         
         public ArrayList<StudentModel> getAllStudents() {

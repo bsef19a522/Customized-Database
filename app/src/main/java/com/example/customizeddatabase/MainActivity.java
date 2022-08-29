@@ -72,15 +72,22 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                try {
-                    studentModel = new StudentModel(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()), switchIsActive.isChecked());
-                    //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
+                if (!editRollNumber.getText().toString().isEmpty()) {
+                    DBHelper db = new DBHelper(MainActivity.this);
+                    boolean search = db.deleteStudent(Integer.parseInt(editRollNumber.getText().toString()));
+
+                    if(search){
+                        editName.setText("");
+                        editRollNumber.setText("");
+                        searches.setText("Deleted");
+                    }
+                    else{
+                        searches.setText("No record found");
+                    }
                 }
-                catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                else{
+                    searches.setText("Please enter correct Rollno");
                 }
-                DBHelper dbHelper  = new DBHelper(MainActivity.this);
-                dbHelper.deleteStudent(studentModel);
             }
         });
 
@@ -103,7 +110,7 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
                 else{
-                    searches.setText("Please enter name and password");
+                    searches.setText("Please enter Name and Rollno");
                 }
             }
         });
