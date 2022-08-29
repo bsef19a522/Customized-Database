@@ -51,16 +51,16 @@ import java.util.ArrayList;
             db.close();
         }
 
-        public void  updateStudent(StudentModel STUDENTModel){
+        public boolean updateStudent(String name, int roll){
             SQLiteDatabase db = this.getWritableDatabase();
             //Hash map, as we did in bundles
             ContentValues cv = new ContentValues();
 
-            cv.put(STUDENT_NAME, STUDENTModel.getName());
-            cv.put(STUDENT_ROLL, STUDENTModel.getRollNmber());
-            cv.put(STUDENT_ENROLL, STUDENTModel.isEnroll());
-            db.update(STUDENT_TABLE, cv, STUDENT_ID + "=?", new String[] {String.valueOf(STUDENTModel.getName())});
+            cv.put(STUDENT_NAME, name);
+            cv.put(STUDENT_ROLL, roll);
+            db.update(STUDENT_TABLE, cv, STUDENT_ROLL + "=?", null);
             db.close();
+            return false;
         }
 
         public void  deleteStudent(StudentModel SModel){

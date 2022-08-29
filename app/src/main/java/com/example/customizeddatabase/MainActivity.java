@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,8 @@ public class MainActivity extends AppCompatActivity {
     EditText editName, editRollNumber;
     Switch switchIsActive;
     ListView listViewStudent;
+    TextView searches;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         editRollNumber = findViewById(R.id.editTextRollNumber);
         switchIsActive = findViewById(R.id.switchStudent);
         listViewStudent = findViewById(R.id.listViewStudent);
+        searches = findViewById(R.id.searches);
 
         buttonAdd.setOnClickListener(new View.OnClickListener() {
             StudentModel studentModel;
@@ -76,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
                 }
                 DBHelper dbHelper  = new DBHelper(MainActivity.this);
-                dbHelper.updateStudent(studentModel);
+                dbHelper.deleteStudent(studentModel);
             }
         });
 
@@ -85,17 +89,23 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                try {
-                    studentModel = new StudentModel(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()), switchIsActive.isChecked());
-                    //Toast.makeText(MainActivity.this, studentModel.toString(), Toast.LENGTH_SHORT).show();
+                if (!editName.getText().toString().isEmpty() && !editRollNumber.getText().toString().isEmpty()) {
+                    DBHelper db = new DBHelper(MainActivity.this);
+                    boolean search = db.updateStudent(editName.getText().toString(), Integer.parseInt(editRollNumber.getText().toString()));
+
+                    if(search){
+                        editName.setText("");
+                        editRollNumber.setText("");
+                        searches.setText("Updated");
+                    }
+                    else{
+                        searches.setText("No record found");
+                    }
                 }
-                catch (Exception e){
-                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                else{
+                    searches.setText("Please enter name and password");
                 }
-                DBHelper dbHelper  = new DBHelper(MainActivity.this);
-                dbHelper.deleteStudent(studentModel);
             }
         });
-
     }
 }

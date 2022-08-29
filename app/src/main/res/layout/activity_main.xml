@@ -8,90 +8,88 @@
 
     <ListView
         android:id="@+id/listViewStudent"
-        android:layout_width="346dp"
-        android:layout_height="253dp"
-        android:layout_marginBottom="28dp"
+        android:layout_width="377dp"
+        android:layout_height="302dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.507"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/switchStudent"
-        app:layout_constraintVertical_bias="1.0"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintTop_toBottomOf="@+id/searches"
+        app:layout_constraintVertical_bias="0.954" />
+
+    <TextView
+        android:id="@+id/searches"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="16dp"
+        android:text="Student Enrolment ckeck"
+        android:textColor="#121111"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/editTextName"
-        android:layout_width="363dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="333dp"
+        android:layout_height="40dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.534"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="TouchTargetSizeCheck" />
+        tools:layout_editor_absoluteX="34dp"
+        tools:layout_editor_absoluteY="78dp" />
 
     <EditText
         android:id="@+id/editTextRollNumber"
-        android:layout_width="364dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="12dp"
+        android:layout_width="333dp"
+        android:layout_height="37dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Roll Number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.595"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName" />
-
-    <Switch
-        android:id="@+id/switchStudent"
-        android:layout_width="138dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="20dp"
-        android:text="Active Students"
-        app:layout_constraintEnd_toEndOf="@+id/buttonAdd"
-        app:layout_constraintStart_toStartOf="@+id/buttonViewAll"
-        app:layout_constraintTop_toBottomOf="@+id/editTextRollNumber" />
-
-    <Button
-        android:id="@+id/buttonViewAll"
-        android:layout_width="159dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="36dp"
-        android:text="View all Students"
-        app:layout_constraintStart_toStartOf="@+id/buttondelete"
-        app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
+        android:text="Rollno"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="127dp" />
 
     <Button
         android:id="@+id/buttonAdd"
-        android:layout_width="125dp"
-        android:layout_height="51dp"
-        android:layout_marginTop="36dp"
-        android:text="Add Value"
-        app:layout_constraintEnd_toEndOf="@+id/buttonupdate"
-        app:layout_constraintTop_toBottomOf="@+id/switchStudent" />
-
-    <Button
-        android:id="@+id/buttondelete"
-        android:layout_width="157dp"
-        android:layout_height="57dp"
-        android:layout_marginTop="16dp"
-        android:text="Delete Student"
-        app:layout_constraintStart_toStartOf="@+id/listViewStudent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonViewAll" />
+        android:layout_width="102dp"
+        android:layout_height="46dp"
+        android:text="Enroll"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="248dp" />
 
     <Button
         android:id="@+id/buttonupdate"
-        android:layout_width="136dp"
-        android:layout_height="54dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="8dp"
-        android:text="Update Student"
-        app:layout_constraintEnd_toEndOf="@+id/listViewStudent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonAdd" />
+        android:layout_width="102dp"
+        android:layout_height="48dp"
+        android:text="Update"
+        tools:layout_editor_absoluteX="277dp"
+        tools:layout_editor_absoluteY="248dp" />
 
+    <Button
+        android:id="@+id/buttondelete"
+        android:layout_width="98dp"
+        android:layout_height="48dp"
+        android:text="Delete"
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="323dp" />
+
+    <Button
+        android:id="@+id/buttonViewAll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View all"
+        tools:layout_editor_absoluteX="275dp"
+        tools:layout_editor_absoluteY="323dp" />
+
+    <Switch
+        android:id="@+id/switchStudent"
+        android:layout_width="154dp"
+        android:layout_height="33dp"
+        android:text="Enrolled"
+        tools:layout_editor_absoluteX="136dp"
+        tools:layout_editor_absoluteY="194dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
