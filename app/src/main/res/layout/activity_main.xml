@@ -2,94 +2,108 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/editTextTask"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
     <ListView
-        android:id="@+id/listViewStudent"
-        android:layout_width="377dp"
-        android:layout_height="302dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/listview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="416dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/searches"
-        app:layout_constraintVertical_bias="0.954" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/searches"
         android:layout_width="240dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="96dp"
+        android:layout_height="0dp"
         android:layout_marginTop="16dp"
         android:text="Student Enrolment ckeck"
         android:textColor="#121111"
         android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="333dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="78dp" />
+    <Button
+        android:id="@+id/buttonview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="92dp"
+        android:text="View all"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editrollno" />
 
     <EditText
-        android:id="@+id/editTextRollNumber"
-        android:layout_width="333dp"
-        android:layout_height="37dp"
+        android:id="@+id/editname"
+        android:layout_width="352dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="68dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Rollno"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="127dp" />
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.508"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck" />
+
+    <EditText
+        android:id="@+id/editrollno"
+        android:layout_width="353dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editname" />
 
     <Button
-        android:id="@+id/buttonAdd"
-        android:layout_width="102dp"
-        android:layout_height="46dp"
-        android:text="Enroll"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="248dp" />
+        android:id="@+id/buttonadd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="68dp"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonview" />
 
     <Button
         android:id="@+id/buttonupdate"
-        android:layout_width="102dp"
-        android:layout_height="48dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
         android:text="Update"
-        tools:layout_editor_absoluteX="277dp"
-        tools:layout_editor_absoluteY="248dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonview" />
 
     <Button
         android:id="@+id/buttondelete"
-        android:layout_width="98dp"
-        android:layout_height="48dp"
-        android:text="Delete"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="323dp" />
-
-    <Button
-        android:id="@+id/buttonViewAll"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="View all"
-        tools:layout_editor_absoluteX="275dp"
-        tools:layout_editor_absoluteY="323dp" />
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="72dp"
+        android:text="Delete"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonadd" />
 
     <Switch
-        android:id="@+id/switchStudent"
-        android:layout_width="154dp"
-        android:layout_height="33dp"
+        android:id="@+id/switch1"
+        android:layout_width="176dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="24dp"
         android:text="Enrolled"
-        tools:layout_editor_absoluteX="136dp"
-        tools:layout_editor_absoluteY="194dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editrollno" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
